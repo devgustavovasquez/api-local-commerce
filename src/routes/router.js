@@ -7,7 +7,7 @@ const ProductsController = require('../Controllers/ProductsController')
 const routes = Router()
 
 routes.get('/', (req, res) => {
-  res.send('Hello Koe')
+  res.send('API Local Commerce')
 })
 
 routes.post('/user', UserController.store)

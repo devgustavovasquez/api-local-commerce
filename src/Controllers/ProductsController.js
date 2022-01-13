@@ -4,7 +4,7 @@ const User = require('../Models/User')
 
 const ProductsController = {
   async store(req, res) {
-    const { name, price, user } = req.body
+    const { name, price } = req.body
     const { user_id } = req.params 
     const { auth } = req.headers 
 
@@ -21,7 +21,7 @@ const ProductsController = {
         type: 'Point',
         coordinates: [longitude, latitude]
       }
-      const createdProduct = await Product.create({ name, price, user: user_id, location: setLocation, order: randomNumberOrder  })
+      const createdProduct = await Product.create({ name, price, user: user_id, location: setLocation  })
 
       return res.status(201).send(createdProduct)
     } catch (error) {
